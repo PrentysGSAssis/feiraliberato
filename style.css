@@ -12,86 +12,84 @@ main { padding: 2rem; }
 /* Timeline container adjustments to fit large expansions */
 #timeline { position: relative; padding-bottom: 3rem; }
 
-.timeline-horizontal {
+
+.timeline-layout {
     display: flex;
-    gap: 2rem;
+    flex-direction: row;
+    gap: 0;
+    min-height: 320px;
+    background: #f8fbff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,95,163,0.08);
+    margin-top: 2rem;
+    overflow: hidden;
+}
+.timeline-menu {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    overflow-x: auto;
-    padding: 1rem 0 2rem 0;
-    scrollbar-width: thin;
-}
-.timeline-horizontal::-webkit-scrollbar {
-    height: 8px;
-}
-.timeline-horizontal::-webkit-scrollbar-thumb {
     background: #005fa3;
-    border-radius: 6px;
-}
-.ano-radio {
-    display: none;
+    padding: 2rem 1rem;
+    min-width: 120px;
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+    box-shadow: 2px 0 12px rgba(0,95,163,0.08);
 }
 .year-btn {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #005fa3 0%, #00c6fb 100%);
-    border: 3px solid #fff;
+    background: linear-gradient(135deg, #00c6fb 0%, #005fa3 100%);
+    border: 2px solid #fff;
     color: #fff;
     font-weight: bold;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     outline: none;
-    position: relative;
-    margin-bottom: 0.5rem;
-    box-shadow: 0 6px 18px rgba(0,95,163,0.12);
-    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+    margin-bottom: 1.2rem;
+    box-shadow: 0 2px 8px rgba(0,95,163,0.10);
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
 }
-.year-btn:hover {
-    background: linear-gradient(135deg, #00c6fb 0%, #005fa3 100%);
-    box-shadow: 0 14px 48px rgba(0,198,251,0.22), 0 0 18px #00c6fb;
-    transform: scale(1.18) rotate(-6deg);
-}
-.ano-radio:checked + .year-btn {
+.year-btn:hover, .year-btn.active {
     background: linear-gradient(135deg, #fff 0%, #00c6fb 100%);
     color: #005fa3;
-    border: 3px solid #00c6fb;
-    box-shadow: 0 12px 40px rgba(0,95,163,0.18), 0 0 22px #00c6fb;
-    transform: scale(1.28) rotate(6deg);
+    border: 2px solid #00c6fb;
+    box-shadow: 0 8px 24px rgba(0,95,163,0.18), 0 0 12px #00c6fb;
+    transform: scale(1.15);
     z-index: 2;
 }
-.event-details-boxes {
+.event-details-area {
+    flex: 1;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    margin-top: 2rem;
-    min-height: 180px;
+    justify-content: center;
+    padding: 2rem;
+    min-height: 320px;
+    background: #fff;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
 }
 .event-details {
     display: none;
-    width: min(92%, 680px);
+    width: min(92%, 480px);
     background: #fff;
-    border-radius: 10px;
-    padding: 1.6rem;
-    margin-bottom: 1rem;
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
     box-shadow: 0 8px 28px rgba(0,0,0,0.10);
     z-index: 1;
     position: relative;
-    animation: fadeInDown 0.5s;
+    animation: fadeInRight 0.5s;
 }
-.ano-radio:checked ~ .event-details-boxes #det1962 { display: block; }
-.ano-radio:checked ~ .event-details-boxes #det1966 { display: block; }
-.ano-radio:checked ~ .event-details-boxes #det1968 { display: block; }
-.ano-radio:checked ~ .event-details-boxes #det1998 { display: block; }
-.ano-radio:checked ~ .event-details-boxes #det2015 { display: block; }
-.ano-radio:checked ~ .event-details-boxes #det2018 { display: block; }
-.ano-radio:checked ~ .event-details-boxes #det2020 { display: block; }
-@keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-30px); }
-    to { opacity: 1; transform: translateY(0); }
+.event-details.active {
+    display: block;
+    animation: fadeInRight 0.5s;
+}
+@keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(40px); }
+    to { opacity: 1; transform: translateX(0); }
 }
 
 /* Connector container - espaço aumentado para grandes botões */

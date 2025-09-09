@@ -1,3 +1,23 @@
+// script.js - timeline vertical menu
+document.addEventListener('DOMContentLoaded', function() {
+    const buttons = document.querySelectorAll('.year-btn');
+    const detailsBoxes = document.querySelectorAll('.event-details');
+    buttons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const ano = btn.getAttribute('data-ano');
+            detailsBoxes.forEach(box => {
+                box.classList.remove('active');
+            });
+            const box = document.getElementById('det' + ano);
+            if (box) box.classList.add('active');
+            buttons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        });
+    });
+    // Exibe o primeiro evento por padrão
+    if (detailsBoxes.length) detailsBoxes[0].classList.add('active');
+    if (buttons.length) buttons[0].classList.add('active');
+});
 // Dados da linha do tempo
 const eventos = [
     { ano: '1962', titulo: 'MARCO ZERO', conteudo: 'Criação da escola Santo Tomás de Aquino.' },

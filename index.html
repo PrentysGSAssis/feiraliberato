@@ -15,13 +15,51 @@
     <main>
         <section id="timeline" aria-label="Linha do Tempo da Escola">
             <h2>Linha do Tempo</h2>
-            <div class="timeline-horizontal" role="list" aria-label="Anos da linha do tempo">
-                <!-- Botões são inseridos via script -->
+            <div class="timeline-horizontal">
+                <input type="radio" name="ano" id="ano1962" class="ano-radio" checked>
+                <label for="ano1962" class="year-btn">1962</label>
+                <input type="radio" name="ano" id="ano1966" class="ano-radio">
+                <label for="ano1966" class="year-btn">1966</label>
+                <input type="radio" name="ano" id="ano1968" class="ano-radio">
+                <label for="ano1968" class="year-btn">1968</label>
+                <input type="radio" name="ano" id="ano1998" class="ano-radio">
+                <label for="ano1998" class="year-btn">1998</label>
+                <input type="radio" name="ano" id="ano2015" class="ano-radio">
+                <label for="ano2015" class="year-btn">2015</label>
+                <input type="radio" name="ano" id="ano2018" class="ano-radio">
+                <label for="ano2018" class="year-btn">2018</label>
+                <input type="radio" name="ano" id="ano2020" class="ano-radio">
+                <label for="ano2020" class="year-btn">2020</label>
             </div>
-
-            <div id="connector-container">
-                <svg id="connector-svg" xmlns="http://www.w3.org/2000/svg"></svg>
-                <div id="event-details" aria-live="polite" aria-hidden="true"></div>
+            <div class="event-details-boxes">
+                <div class="event-details" id="det1962">
+                    <h3>MARCO ZERO</h3>
+                    <p>Criação da escola Santo Tomás de Aquino.</p>
+                </div>
+                <div class="event-details" id="det1966">
+                    <h3>Autorização de Funcionamento</h3>
+                    <p>Ano em que a escola recebeu autorização oficial para funcionamento.</p>
+                </div>
+                <div class="event-details" id="det1968">
+                    <h3>Alteração de Nome e 1ª Turma do Magistério</h3>
+                    <p>Alteração do nome para Liberto de Castro e formatura da primeira turma do magistério.</p>
+                </div>
+                <div class="event-details" id="det1998">
+                    <h3>Última Turma de Magistério</h3>
+                    <p>Formatura da última turma do magistério.</p>
+                </div>
+                <div class="event-details" id="det2015">
+                    <h3>Fundação da Escola</h3>
+                    <p>A Escola Estadual Liberdade de Castro foi fundada em 2015.</p>
+                </div>
+                <div class="event-details" id="det2018">
+                    <h3>Primeira Feira Técnica</h3>
+                    <p>Realização da primeira feira técnica com participação dos alunos.</p>
+                </div>
+                <div class="event-details" id="det2020">
+                    <h3>Placeholder</h3>
+                    <p>Conteúdo placeholder para futuros eventos.</p>
+                </div>
             </div>
         </section>
     </main>

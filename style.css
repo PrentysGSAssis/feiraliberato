@@ -11,46 +11,87 @@ main { padding: 2rem; }
 
 /* Timeline container adjustments to fit large expansions */
 #timeline { position: relative; padding-bottom: 3rem; }
+
 .timeline-horizontal {
-    display:flex; gap:2rem; align-items:center; justify-content:center;
-    overflow-x:auto; padding:1rem 0 2rem 0; scrollbar-width:thin;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    overflow-x: auto;
+    padding: 1rem 0 2rem 0;
+    scrollbar-width: thin;
 }
-.timeline-horizontal::-webkit-scrollbar { height:8px; }
-.timeline-horizontal::-webkit-scrollbar-thumb { background:#005fa3; border-radius:6px; }
-
-/* Year buttons */
+.timeline-horizontal::-webkit-scrollbar {
+    height: 8px;
+}
+.timeline-horizontal::-webkit-scrollbar-thumb {
+    background: #005fa3;
+    border-radius: 6px;
+}
+.ano-radio {
+    display: none;
+}
 .year-btn {
-    width: 70px; height:70px; border-radius:50%;
-    background: linear-gradient(135deg,#005fa3 0%,#00c6fb 100%);
-    border: 3px solid #fff; color:#fff; font-weight:bold;
-    font-size:1.3rem; display:flex; align-items:center; justify-content:center;
-    cursor:pointer; outline:none; position:relative;
-    transition: transform 420ms cubic-bezier(.22,.9,.3,1), box-shadow 420ms, background 320ms;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #005fa3 0%, #00c6fb 100%);
+    border: 3px solid #fff;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    margin-bottom: 0.5rem;
     box-shadow: 0 6px 18px rgba(0,95,163,0.12);
-    transform-origin: center center;
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
 }
-
-/* Hover */
-.year-btn:hover, .year-btn.hover {
-    transform: scale(1.18) rotate(-6deg);
+.year-btn:hover {
+    background: linear-gradient(135deg, #00c6fb 0%, #005fa3 100%);
     box-shadow: 0 14px 48px rgba(0,198,251,0.22), 0 0 18px #00c6fb;
+    transform: scale(1.18) rotate(-6deg);
 }
-
-/* Active (small) */
-.year-btn.active {
-    transform: scale(1.28) rotate(6deg);
-    background: linear-gradient(135deg,#fff 0%,#00c6fb 100%);
-    color:#005fa3; border:3px solid #00c6fb;
+.ano-radio:checked + .year-btn {
+    background: linear-gradient(135deg, #fff 0%, #00c6fb 100%);
+    color: #005fa3;
+    border: 3px solid #00c6fb;
     box-shadow: 0 12px 40px rgba(0,95,163,0.18), 0 0 22px #00c6fb;
+    transform: scale(1.28) rotate(6deg);
+    z-index: 2;
 }
-
-/* Active - EXPANDED (grande efeito "balão") */
-.year-btn.active-expand {
-    transform: scale(1.85) rotate(0deg); /* grande expansão */
-    box-shadow: 0 30px 88px rgba(0,95,163,0.40), 0 0 48px #00c6fb;
-    background: linear-gradient(135deg,#fff 0%,#005fa3 100%);
-    color: #005fa3; border: 3px solid #005fa3;
-    z-index: 40;
+.event-details-boxes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    min-height: 180px;
+}
+.event-details {
+    display: none;
+    width: min(92%, 680px);
+    background: #fff;
+    border-radius: 10px;
+    padding: 1.6rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.10);
+    z-index: 1;
+    position: relative;
+    animation: fadeInDown 0.5s;
+}
+.ano-radio:checked ~ .event-details-boxes #det1962 { display: block; }
+.ano-radio:checked ~ .event-details-boxes #det1966 { display: block; }
+.ano-radio:checked ~ .event-details-boxes #det1968 { display: block; }
+.ano-radio:checked ~ .event-details-boxes #det1998 { display: block; }
+.ano-radio:checked ~ .event-details-boxes #det2015 { display: block; }
+.ano-radio:checked ~ .event-details-boxes #det2018 { display: block; }
+.ano-radio:checked ~ .event-details-boxes #det2020 { display: block; }
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Connector container - espaço aumentado para grandes botões */

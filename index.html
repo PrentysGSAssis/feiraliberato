@@ -1,68 +1,41 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Feira Técnica - Liberdade de Castro</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feira Técnica Liberato</title>
+    <!-- Ligação para a folha de estilos externa -->
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Feira Técnica - Liberdade de Castro</h1>
-        <p>Uma linha do tempo dos principais acontecimentos da escola</p>
+        <h1>Feira Técnica Liberato</h1>
+        <p>Conheça a história da nossa escola através de uma linha do tempo interativa!</p>
     </header>
-
     <main>
-        <section id="timeline" aria-label="Linha do Tempo da Escola">
-            <h2>Linha do Tempo</h2>
-            <div class="timeline-layout">
-                <nav class="timeline-menu">
-                    <button class="year-btn" data-ano="1962">1962</button>
-                    <button class="year-btn" data-ano="1966">1966</button>
-                    <button class="year-btn" data-ano="1968">1968</button>
-                    <button class="year-btn" data-ano="1998">1998</button>
-                    <button class="year-btn" data-ano="2015">2015</button>
-                    <button class="year-btn" data-ano="2018">2018</button>
-                    <button class="year-btn" data-ano="2020">2020</button>
-                </nav>
-                <div class="event-details-area">
-                    <div class="event-details" id="det1962">
-                        <h3>MARCO ZERO</h3>
-                        <p>Criação da escola Santo Tomás de Aquino.</p>
-                    </div>
-                    <div class="event-details" id="det1966">
-                        <h3>Autorização de Funcionamento</h3>
-                        <p>Ano em que a escola recebeu autorização oficial para funcionamento.</p>
-                    </div>
-                    <div class="event-details" id="det1968">
-                        <h3>Alteração de Nome e 1ª Turma do Magistério</h3>
-                        <p>Alteração do nome para Liberto de Castro e formatura da primeira turma do magistério.</p>
-                    </div>
-                    <div class="event-details" id="det1998">
-                        <h3>Última Turma de Magistério</h3>
-                        <p>Formatura da última turma do magistério.</p>
-                    </div>
-                    <div class="event-details" id="det2015">
-                        <h3>Fundação da Escola</h3>
-                        <p>A Escola Estadual Liberdade de Castro foi fundada em 2015.</p>
-                    </div>
-                    <div class="event-details" id="det2018">
-                        <h3>Primeira Feira Técnica</h3>
-                        <p>Realização da primeira feira técnica com participação dos alunos.</p>
-                    </div>
-                    <div class="event-details" id="det2020">
-                        <h3>Placeholder</h3>
-                        <p>Conteúdo placeholder para futuros eventos.</p>
-                    </div>
+        <section id="timeline">
+            <div class="timeline-container">
+                <!-- Botões dos anos -->
+                <div class="years-wrapper">
+                    <div class="year" data-year="1974"><span>1974</span></div>
+                    <div class="year" data-year="1985"><span>1985</span></div>
+                    <div class="year" data-year="2000"><span>2000</span></div>
+                    <div class="year" data-year="2020"><span>2020</span></div>
+                </div>
+                
+                <!-- Área onde o conteúdo do ano selecionado aparecerá -->
+                <div id="year-content">
+                    <!-- O conteúdo será inserido aqui pelo JavaScript -->
                 </div>
             </div>
         </section>
     </main>
-
     <footer>
-        <p>&copy; 2025 Escola Estadual Liberdade de Castro</p>
+        <p>&copy; 2025 Escola Liberato. Feira Técnica.</p>
     </footer>
 
+    <!-- Ligação para o arquivo de script externo -->
     <script src="script.js"></script>
 </body>
 </html>

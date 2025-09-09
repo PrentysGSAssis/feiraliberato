@@ -4,9 +4,108 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feira Técnica Liberato</title>
-    <!-- Ligação para a folha de estilos externa -->
+    
+    <style>
+        /* Estilos gerais */
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f4f6fa;
+            margin: 0;
+            padding: 0;
+            color: #222;
+        }
 
-    <link rel="stylesheet" href="style.css">
+        header {
+            background: #005fa3;
+            color: #fff;
+            padding: 32px 0 16px 0;
+            text-align: center;
+        }
+
+        header h1 { margin: 0; font-size: 2.5rem; }
+        header p { margin-top: 8px; font-size: 1.2rem; }
+
+        main {
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .timeline-container {
+            display: flex;
+            flex-direction: column; /* Organiza os itens em coluna */
+            align-items: center; /* Centraliza os itens */
+            gap: 20px;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            padding: 30px;
+            width: 100%;
+            max-width: 700px;
+        }
+
+        .years-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap; /* Permite que os botões quebrem a linha em telas pequenas */
+        }
+
+        .year {
+            cursor: pointer;
+            background: #e3f0ff;
+            border: 2px solid #005fa3;
+            border-radius: 50px;
+            padding: 12px 32px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            transition: all 0.2s ease-in-out;
+            text-align: center;
+        }
+
+        .year:hover {
+            background: #b3d7ff;
+            transform: scale(1.05);
+        }
+
+        .year.active {
+            background: #005fa3;
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        #year-content {
+            width: 100%;
+            border-radius: 12px;
+            border: 1px solid #ddd;
+            padding: 0;
+            max-height: 0; /* Começa fechado */
+            overflow: hidden; /* Esconde o conteúdo */
+            transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out; /* Animação suave */
+        }
+
+        #year-content.active {
+            padding: 25px; /* Adiciona padding quando aberto */
+            max-height: 500px; /* Altura suficiente para o conteúdo */
+        }
+
+        .box {
+            background: #f0f8ff;
+            border-left: 4px solid #005fa3;
+            padding: 16px;
+            margin-top: 12px;
+            border-radius: 8px;
+            font-size: 1.05rem;
+        }
+        
+        footer {
+            background: #005fa3;
+            color: #fff;
+            text-align: center;
+            padding: 16px 0;
+            margin-top: 40px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -14,53 +113,17 @@
         <p>Conheça a história da nossa escola através de uma linha do tempo interativa!</p>
     </header>
     <main>
-        <section id="timeline" aria-label="Linha do Tempo da Escola">
-            <h2>Linha do Tempo</h2>
-            <div class="timeline-horizontal">
-                <input type="radio" name="ano" id="ano1962" class="ano-radio" checked>
-                <label for="ano1962" class="year-btn">1962</label>
-                <input type="radio" name="ano" id="ano1966" class="ano-radio">
-                <label for="ano1966" class="year-btn">1966</label>
-                <input type="radio" name="ano" id="ano1968" class="ano-radio">
-                <label for="ano1968" class="year-btn">1968</label>
-                <input type="radio" name="ano" id="ano1998" class="ano-radio">
-                <label for="ano1998" class="year-btn">1998</label>
-                <input type="radio" name="ano" id="ano2015" class="ano-radio">
-                <label for="ano2015" class="year-btn">2015</label>
-                <input type="radio" name="ano" id="ano2018" class="ano-radio">
-                <label for="ano2018" class="year-btn">2018</label>
-                <input type="radio" name="ano" id="ano2020" class="ano-radio">
-                <label for="ano2020" class="year-btn">2020</label>
-            </div>
-            <div class="event-details-boxes">
-                <div class="event-details" id="det1962">
-                    <h3>MARCO ZERO</h3>
-                    <p>Criação da escola Santo Tomás de Aquino.</p>
+        <section id="timeline">
+            <div class="timeline-container">
+                <div class="years-wrapper">
+                    <div class="year" data-year="1974"><span>1974</span></div>
+                    <div class="year" data-year="1985"><span>1985</span></div>
+                    <div class="year" data-year="2000"><span>2000</span></div>
+                    <div class="year" data-year="2020"><span>2020</span></div>
                 </div>
-                <div class="event-details" id="det1966">
-                    <h3>Autorização de Funcionamento</h3>
-                    <p>Ano em que a escola recebeu autorização oficial para funcionamento.</p>
-                </div>
-                <div class="event-details" id="det1968">
-                    <h3>Alteração de Nome e 1ª Turma do Magistério</h3>
-                    <p>Alteração do nome para Liberto de Castro e formatura da primeira turma do magistério.</p>
-                </div>
-                <div class="event-details" id="det1998">
-                    <h3>Última Turma de Magistério</h3>
-                    <p>Formatura da última turma do magistério.</p>
-                </div>
-                <div class="event-details" id="det2015">
-                    <h3>Fundação da Escola</h3>
-                    <p>A Escola Estadual Liberdade de Castro foi fundada em 2015.</p>
-                </div>
-                <div class="event-details" id="det2018">
-                    <h3>Primeira Feira Técnica</h3>
-                    <p>Realização da primeira feira técnica com participação dos alunos.</p>
-                </div>
-                <div class="event-details" id="det2020">
-                    <h3>Placeholder</h3>
-                    <p>Conteúdo placeholder para futuros eventos.</p>
-                </div>
+                
+                <div id="year-content">
+                    </div>
             </div>
         </section>
     </main>
@@ -68,7 +131,44 @@
         <p>&copy; 2025 Escola Liberato. Feira Técnica.</p>
     </footer>
 
-    <!-- Ligação para o arquivo de script externo -->
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const contentData = {
+                1974: `<h2>1974</h2><div class="box">Fundação da escola.<br>Entrevista com fundadores (em breve).</div>`,
+                1985: `<h2>1985</h2><div class="box">Primeira feira técnica.<br>Vídeo dos organizadores (em breve).</div>`,
+                2000: `<h2>2000</h2><div class="box">Expansão dos cursos.<br>Depoimentos de alunos (em breve).</div>`,
+                2020: `<h2>2020</h2><div class="box">Feira digital.<br>Entrevistas e vídeos (em breve).</div>`
+            };
+
+            const yearButtons = document.querySelectorAll('.year');
+            const contentDisplay = document.getElementById('year-content');
+            let currentlyOpenYear = null;
+
+            yearButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const selectedYear = this.dataset.year;
+
+                    // Fecha o conteúdo se o mesmo ano for clicado novamente
+                    if (currentlyOpenYear === selectedYear) {
+                        contentDisplay.classList.remove('active');
+                        this.classList.remove('active');
+                        currentlyOpenYear = null;
+                        return; // Termina a função aqui
+                    }
+
+                    // Remove a classe 'active' de todos os botões
+                    yearButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Adiciona 'active' ao botão clicado
+                    this.classList.add('active');
+
+                    // Atualiza o conteúdo e abre o display
+                    contentDisplay.innerHTML = contentData[selectedYear];
+                    contentDisplay.classList.add('active');
+                    currentlyOpenYear = selectedYear;
+                });
+            });
+        });
+    </script>
 </body>
 </html>

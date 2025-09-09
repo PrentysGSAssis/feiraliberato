@@ -1,27 +1,35 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Feira Técnica - Liberdade de Castro</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
     <header>
         <h1>Feira Técnica - Liberdade de Castro</h1>
         <p>Uma linha do tempo dos principais acontecimentos da escola</p>
     </header>
+
     <main>
-        <section id="timeline">
+        <section id="timeline" aria-label="Linha do Tempo da Escola">
             <h2>Linha do Tempo</h2>
-            <div class="timeline-container">
-                <!-- Eventos serão inseridos aqui via JS -->
+            <div class="timeline-horizontal" role="list" aria-label="Anos da linha do tempo">
+                <!-- Botões são inseridos via script -->
+            </div>
+
+            <div id="connector-container">
+                <svg id="connector-svg" xmlns="http://www.w3.org/2000/svg"></svg>
+                <div id="event-details" aria-live="polite" aria-hidden="true"></div>
             </div>
         </section>
     </main>
+
     <footer>
         <p>&copy; 2025 Escola Estadual Liberdade de Castro</p>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>

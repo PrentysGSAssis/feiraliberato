@@ -1,10 +1,15 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const contentData = {
-        1974: `<h2>1974</h2><div class="box">Fundação da escola.<br>Entrevista com fundadores (em breve).</div>`,
-        1985: `<h2>1985</h2><div class="box">Primeira feira técnica.<br>Vídeo dos organizadores (em breve).</div>`,
-        2000: `<h2>2000</h2><div class="box">Expansão dos cursos.<br>Depoimentos de alunos (em breve).</div>`,
-        2020: `<h2>2020</h2><div class="box">Feira digital.<br>Entrevistas e vídeos (em breve).</div>`
+// Importa conteúdo do HTML para o objeto contentData
+function getContentDataFromHTML() {
+    return {
+        1974: document.querySelector('.doc74')?.innerHTML || '',
+        1985: document.querySelector('.doc85')?.innerHTML || '',
+        2000: document.querySelector('.doc00')?.innerHTML || '',
+        2020: document.querySelector('.doc20')?.innerHTML || ''
     };
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    const contentData = getContentDataFromHTML();
 
     const yearButtons = document.querySelectorAll('.year');
     const contentDisplay = document.getElementById('year-content');

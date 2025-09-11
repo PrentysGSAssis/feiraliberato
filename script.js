@@ -1,3 +1,35 @@
+document.addEventListener('DOMContentLoaded', function () {
+    const contentData = {
+        1974: `<h2>1974</h2><div class="box">Fundação da escola.<br>Entrevista com fundadores (em breve).</div>`,
+        1985: `<h2>1985</h2><div class="box">Primeira feira técnica.<br>Vídeo dos organizadores (em breve).</div>`,
+        2000: `<h2>2000</h2><div class="box">Expansão dos cursos.<br>Depoimentos de alunos (em breve).</div>`,
+        2020: `<h2>2020</h2><div class="box">Feira digital.<br>Entrevistas e vídeos (em breve).</div>`
+    };
+
+    const yearButtons = document.querySelectorAll('.year');
+    const contentDisplay = document.getElementById('year-content');
+    let currentlyOpenYear = null;
+
+    yearButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const selectedYear = this.dataset.year;
+
+            // Fecha o conteúdo se o mesmo ano for clicado novamente
+            if (currentlyOpenYear === selectedYear) {
+                contentDisplay.classList.remove('active');
+                this.classList.remove('active');
+                currentlyOpenYear = null;
+                return;
+            }
+
+            yearButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            contentDisplay.innerHTML = contentData[selectedYear];
+            contentDisplay.classList.add('active');
+            currentlyOpenYear = selectedYear;
+        });
+    });
+});
 // Dados da linha do tempo
 const eventos = [
     { ano: '1962', titulo: 'MARCO ZERO', conteudo: 'Criação da escola Santo Tomás de Aquino.' },

@@ -15,6 +15,10 @@
     <main>
         <section id="timeline">
             <div class="timeline-container">
+                <div id="banner-fixo" class="banner-fixo">
+                    <img id="banner-img-fixo" src="paisagem-placeholder.jpg" alt="Paisagem do documento" class="banner-img-fixo">
+                    <h2 id="banner-titulo-fixo">Selecione um ano</h2>
+                </div>
                 <div class="years-wrapper">
                     <div class="year" data-year="1974"><span>1974</span></div>
                     <div class="year" data-year="1985"><span>1985</span></div>
@@ -32,14 +36,48 @@
                             <h3>Sobre o curso</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna eu tincidunt consectetur, nisi nisl aliquam erat, eu aliquam erat nisl euismod erat.</p>
                         </div>
+                        <!-- Novo capítulo antes do diretor -->
+                        <div class="historia-ano" id="sessao-1974-historia">
+                            <h3>História do ano</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. História e contexto do ano 1974.</p>
+                        </div>
                         <div class="diretor" id="sessao-1974-diretor">
-                            <h3>Diretor</h3>
-                            <img src="" alt="Foto do diretor 1974" class="profile_director74">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti. Etiam euismod, urna eu tincidunt consectetur.</p>
+                            <div class="diretor-info">
+                                <h3>Diretor</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti. Etiam euismod, urna eu tincidunt consectetur.</p>
+                            </div>
+                            <img src="assets/diretor-1974.jpg" alt="Foto do diretor 1974" class="diretor-img profile_director74">
+                        </div>
+                        <!-- Novo capítulo: Professores -->
+                        <div class="professores" id="sessao-1974-professores">
+                            <h3>Professores</h3>
+                            <div class="prof-list-container">
+                                <ul class="prof-list">
+                                    <li><button type="button" class="prof-btn" data-prof="prof1-1974">Ana Souza</button></li>
+                                    <li><button type="button" class="prof-btn" data-prof="prof2-1974">Carlos Silva</button></li>
+                                    <li><button type="button" class="prof-btn" data-prof="prof3-1974">Maria Oliveira</button></li>
+                                    <li><button type="button" class="prof-btn" data-prof="prof4-1974">João Pereira</button></li>
+                                    <li><button type="button" class="prof-btn" data-prof="prof5-1974">Fernanda Lima</button></li>
+                                </ul>
+                                <div class="prof-details" id="prof-details-1974">
+                                    <div class="prof-info">
+                                        <h4 id="prof-name-1974">Selecione um professor</h4>
+                                        <p id="prof-nasc-1974"></p>
+                                        <p id="prof-sobre-1974"></p>
+                                        <p id="prof-extra-1974"></p>
+                                    </div>
+                                    <img id="prof-img-1974" src="" alt="Foto do professor" class="prof-img" style="display:none;">
+                                </div>
+                            </div>
                         </div>
                         <div class="alunos" id="sessao-1974-alunos">
                             <h3>Alunos</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod, urna eu tincidunt consectetur, nisi nisl aliquam erat.</p>
+                        </div>
+                        <!-- Novo capítulo depois dos alunos -->
+                        <div class="projetos-atividades" id="sessao-1974-projetos">
+                            <h3>Projetos e atividades</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Projetos e atividades desenvolvidos em 1974.</p>
                         </div>
                         <div class="curiosidades" id="sessao-1974-curiosidades">
                             <h3>Curiosidades</h3>
@@ -75,14 +113,45 @@
                             <h3>Sobre o curso</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna eu tincidunt consectetur, nisi nisl aliquam erat, eu aliquam erat nisl euismod erat.</p>
                         </div>
+                        <div class="historia-ano" id="sessao-1985-historia">
+                            <h3>História do ano</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. História e contexto do ano 1985.</p>
+                        </div>
                         <div class="diretor" id="sessao-1985-diretor">
-                            <h3>Diretor</h3>
-                            <img src="" alt="Foto do diretor 1985" class="profile_director85">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti. Etiam euismod, urna eu tincidunt consectetur.</p>
+                            <div class="diretor-info">
+                                <h3>Diretor</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti. Etiam euismod, urna eu tincidunt consectetur.</p>
+                            </div>
+                            <img src="assets/diretor-1985.jpg" alt="Foto do diretor 1985" class="diretor-img profile_director85">
+                        </div>
+                        <div class="professores" id="sessao-1985-professores">
+                            <h3>Professores</h3>
+                            <div class="prof-list-container">
+                                <ul class="prof-list">
+                                    <li><button type="button" class="prof-btn" data-prof="prof1-1985">Paulo Mendes</button></li>
+                                    <li><button type="button" class="prof-btn" data-prof="prof2-1985">Luciana Costa</button></li>
+                                    <li><button type="button" class="prof-btn" data-prof="prof3-1985">Roberto Dias</button></li>
+                                    <li><button type="button" class="prof-btn" data-prof="prof4-1985">Juliana Ramos</button></li>
+                                    <li><button type="button" class="prof-btn" data-prof="prof5-1985">Sérgio Martins</button></li>
+                                </ul>
+                                <div class="prof-details" id="prof-details-1985">
+                                    <div class="prof-info">
+                                        <h4 id="prof-name-1985">Selecione um professor</h4>
+                                        <p id="prof-nasc-1985"></p>
+                                        <p id="prof-sobre-1985"></p>
+                                        <p id="prof-extra-1985"></p>
+                                    </div>
+                                    <img id="prof-img-1985" src="" alt="Foto do professor" class="prof-img" style="display:none;">
+                                </div>
+                            </div>
                         </div>
                         <div class="alunos" id="sessao-1985-alunos">
                             <h3>Alunos</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod, urna eu tincidunt consectetur, nisi nisl aliquam erat.</p>
+                        </div>
+                        <div class="projetos-atividades" id="sessao-1985-projetos">
+                            <h3>Projetos e atividades</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Projetos e atividades desenvolvidos em 1985.</p>
                         </div>
                         <div class="curiosidades" id="sessao-1985-curiosidades">
                             <h3>Curiosidades</h3>
@@ -118,14 +187,45 @@
                             <h3>Sobre o curso</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna eu tincidunt consectetur, nisi nisl aliquam erat, eu aliquam erat nisl euismod erat.</p>
                         </div>
+                        <div class="historia-ano" id="sessao-2000-historia">
+                            <h3>História do ano</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. História e contexto do ano 2000.</p>
+                        </div>
                         <div class="diretor" id="sessao-2000-diretor">
-                            <h3>Diretor</h3>
-                            <img src="" alt="Foto do diretor 2000" class="profile_director00">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti. Etiam euismod, urna eu tincidunt consectetur.</p>
+                            <div class="diretor-info">
+                                <h3>Diretor</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti. Etiam euismod, urna eu tincidunt consectetur.</p>
+                            </div>
+                            <img src="assets/diretor-2000.jpg" alt="Foto do diretor 2000" class="diretor-img profile_director00">
+                        </div>
+                        <div class="professores" id="sessao-2000-professores">
+                            <h3>Professores</h3>
+                            <div class="prof-list-container">
+                                <ul class="prof-list">
+                                    <li><button type="button" class="prof-btn" data-prof="prof1-2000">Cláudia Rocha</button></li>
+                                    <li><button type="button" class="prof-btn" data-prof="prof2-2000">Fernando Almeida</button></li>
+                                    <li><button type="button" class="prof-btn" data-prof="prof3-2000">Patrícia Gomes</button></li>
+                                    <li><button type="button" class="prof-btn" data-prof="prof4-2000">Eduardo Santos</button></li>
+                                    <li><button type="button" class="prof-btn" data-prof="prof5-2000">Mariana Ferreira</button></li>
+                                </ul>
+                                <div class="prof-details" id="prof-details-2000">
+                                    <div class="prof-info">
+                                        <h4 id="prof-name-2000">Selecione um professor</h4>
+                                        <p id="prof-nasc-2000"></p>
+                                        <p id="prof-sobre-2000"></p>
+                                        <p id="prof-extra-2000"></p>
+                                    </div>
+                                    <img id="prof-img-2000" src="" alt="Foto do professor" class="prof-img" style="display:none;">
+                                </div>
+                            </div>
                         </div>
                         <div class="alunos" id="sessao-2000-alunos">
                             <h3>Alunos</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod, urna eu tincidunt consectetur, nisi nisl aliquam erat.</p>
+                        </div>
+                        <div class="projetos-atividades" id="sessao-2000-projetos">
+                            <h3>Projetos e atividades</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Projetos e atividades desenvolvidos em 2000.</p>
                         </div>
                         <div class="curiosidades" id="sessao-2000-curiosidades">
                             <h3>Curiosidades</h3>
@@ -161,14 +261,45 @@
                             <h3>Sobre o curso</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna eu tincidunt consectetur, nisi nisl aliquam erat, eu aliquam erat nisl euismod erat.</p>
                         </div>
+                        <div class="historia-ano" id="sessao-2020-historia">
+                            <h3>História do ano</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. História e contexto do ano 2020.</p>
+                        </div>
                         <div class="diretor" id="sessao-2020-diretor">
-                            <h3>Diretor</h3>
-                            <img src="" alt="Foto do diretor 2020" class="profile_director20">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti. Etiam euismod, urna eu tincidunt consectetur.</p>
+                            <div class="diretor-info">
+                                <h3>Diretor</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti. Etiam euismod, urna eu tincidunt consectetur.</p>
+                            </div>
+                            <img src="assets/diretor-2020.jpg" alt="Foto do diretor 2020" class="diretor-img profile_director20">
+                        </div>
+                        <div class="professores" id="sessao-2020-professores">
+                            <h3>Professores</h3>
+                            <div class="prof-list-container">
+                                <ul class="prof-list">
+                                    <li><button type="button" class="prof-btn" data-prof="prof1-2020">Cláudia Rocha</button></li>
+                                    <li><button type="button" class="prof-btn" data-prof="prof2-2020">Fernando Almeida</button></li>
+                                    <li><button type="button" class="prof-btn" data-prof="prof3-2020">Patrícia Gomes</button></li>
+                                    <li><button type="button" class="prof-btn" data-prof="prof4-2020">Eduardo Santos</button></li>
+                                    <li><button type="button" class="prof-btn" data-prof="prof5-2020">Mariana Ferreira</button></li>
+                                </ul>
+                                <div class="prof-details" id="prof-details-2020">
+                                    <div class="prof-info">
+                                        <h4 id="prof-name-2020">Selecione um professor</h4>
+                                        <p id="prof-nasc-2020"></p>
+                                        <p id="prof-sobre-2020"></p>
+                                        <p id="prof-extra-2020"></p>
+                                    </div>
+                                    <img id="prof-img-2020" src="" alt="Foto do professor" class="prof-img" style="display:none;">
+                                </div>
+                            </div>
                         </div>
                         <div class="alunos" id="sessao-2020-alunos">
                             <h3>Alunos</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod, urna eu tincidunt consectetur, nisi nisl aliquam erat.</p>
+                        </div>
+                        <div class="projetos-atividades" id="sessao-2020-projetos">
+                            <h3>Projetos e atividades</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Projetos e atividades desenvolvidos em 2020.</p>
                         </div>
                         <div class="curiosidades" id="sessao-2020-curiosidades">
                             <h3>Curiosidades</h3>

@@ -9,31 +9,72 @@ function getContentDataFromHTML() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    const contentData = getContentDataFromHTML();
-
     const yearButtons = document.querySelectorAll('.year');
     const contentDisplay = document.getElementById('year-content');
+    const timelineContainer = document.querySelector('.timeline-container');
+    const bannerFixo = document.getElementById('banner-fixo');
+    const bannerTituloFixo = document.getElementById('banner-titulo-fixo');
+    const bannerImgFixo = document.getElementById('banner-img-fixo');
     let currentlyOpenYear = null;
+
+    // Imagens e títulos por documento (substitua os src depois)
+    const bannerData = {
+        '1974': { titulo: '1974 - Paisagem histórica', img: 'paisagem-placeholder.jpg' },
+        '1985': { titulo: '1985 - Paisagem dos anos 80', img: 'paisagem-placeholder.jpg' },
+        '2000': { titulo: '2000 - Paisagem do novo milênio', img: 'paisagem-placeholder.jpg' },
+        '2020': { titulo: '2020 - Paisagem atual', img: 'paisagem-placeholder.jpg' }
+    };
 
     yearButtons.forEach(button => {
         button.addEventListener('click', function () {
             const selectedYear = this.dataset.year;
 
-            // Fecha o conteúdo se o mesmo ano for clicado novamente
             if (currentlyOpenYear === selectedYear) {
                 contentDisplay.classList.remove('active');
+                timelineContainer.classList.remove('active');
                 this.classList.remove('active');
+                // Oculta todas as sessões
+                contentDisplay.querySelectorAll('section').forEach(sec => {
+                    sec.style.display = 'none';
+                    sec.classList.remove('active');
+                });
+                // Banner volta ao estado inicial
+                bannerTituloFixo.textContent = 'Selecione um ano';
+                bannerImgFixo.src = 'paisagem-placeholder.jpg';
                 currentlyOpenYear = null;
                 return;
             }
 
             yearButtons.forEach(btn => btn.classList.remove('active'));
             this.classList.add('active');
-            contentDisplay.innerHTML = contentData[selectedYear];
             contentDisplay.classList.add('active');
+            timelineContainer.classList.add('active');
+            // Oculta todas as sessões
+            contentDisplay.querySelectorAll('section').forEach(sec => {
+                sec.style.display = 'none';
+                sec.classList.remove('active');
+            });
+            // Exibe apenas a sessão do ano selecionado
+            const activeSection = contentDisplay.querySelector(`.doc${selectedYear.slice(-2)}`);
+            if (activeSection) {
+                activeSection.style.display = 'block';
+                activeSection.classList.add('active');
+            }
+            // Atualiza banner fixo
+            bannerTituloFixo.textContent = bannerData[selectedYear].titulo;
+            bannerImgFixo.src = bannerData[selectedYear].img;
             currentlyOpenYear = selectedYear;
         });
     });
+
+    // Inicialmente, oculta todas as sessões
+    contentDisplay.querySelectorAll('section').forEach(sec => {
+        sec.style.display = 'none';
+        sec.classList.remove('active');
+    });
+    // Banner inicial
+    bannerTituloFixo.textContent = 'Selecione um ano';
+    bannerImgFixo.src = 'assets/placeholder.jpg';
 });
 // Dados da linha do tempo
 const eventos = [
@@ -223,3 +264,114 @@ function drawConnectorForActive() {
     svg.setAttribute('height', container.offsetHeight);
     svg.appendChild(line);
 }
+
+const professoresData = {
+    '1974': {
+        'prof1-1974': {
+            nome: 'Ana Souza',
+            nasc: '10/03/1945',
+            sobre: 'Professora de Matemática, atuou na fundação da escola.',
+            extra: 'Participou da primeira feira técnica.',
+            img: 'assets/prof-ana-souza.jpg'
+        },
+        'prof2-1974': {
+            nome: 'Carlos Silva',
+            nasc: '22/07/1942',
+            sobre: 'Professor de História, referência em projetos culturais.',
+            extra: 'Organizador do jornal escolar.',
+            img: 'assets/prof-carlos-silva.jpg'
+        },
+        'prof3-1974': {
+            nome: 'Maria Oliveira',
+            nasc: '15/11/1948',
+            sobre: 'Professora de Português, destaque em literatura.',
+            extra: 'Idealizadora do clube de leitura.',
+            img: 'assets/prof-maria-oliveira.jpg'
+        },
+        'prof4-1974': {
+            nome: 'João Pereira',
+            nasc: '05/02/1944',
+            sobre: 'Professor de Ciências, pioneiro em laboratórios.',
+            extra: 'Responsável pelo laboratório de química.',
+            img: 'assets/prof-joao-pereira.jpg'
+        },
+        'prof5-1974': {
+            nome: 'Fernanda Lima',
+            nasc: '30/09/1950',
+            sobre: 'Professora de Geografia, envolvida em projetos ambientais.',
+            extra: 'Criadora da horta escolar.',
+            img: 'assets/prof-fernanda-lima.jpg'
+        }
+    },
+    '1985': {
+        'prof1-1985': {
+            nome: 'Paulo Mendes',
+            nasc: '12/01/1952',
+            sobre: 'Professor de Física, inovador em ensino experimental.',
+            extra: 'Premiado em olimpíadas científicas.',
+            img: 'assets/prof-paulo-mendes.jpg'
+        },
+        'prof2-1985': {
+            nome: 'Luciana Costa',
+            nasc: '18/06/1955',
+            sobre: 'Professora de Inglês, fundadora do grupo de teatro.',
+            extra: 'Coordenadora de intercâmbios.',
+            img: 'assets/prof-luciana-costa.jpg'
+        },
+        'prof3-1985': {
+            nome: 'Roberto Dias',
+            nasc: '27/03/1950',
+            sobre: 'Professor de Artes, mentor de exposições estudantis.',
+            extra: 'Idealizador do mural da escola.',
+            img: 'assets/prof-roberto-dias.jpg'
+        },
+        'prof4-1985': {
+            nome: 'Juliana Ramos',
+            nasc: '09/12/1957',
+            sobre: 'Professora de Química, destaque em iniciação científica.',
+            extra: 'Orientadora de projetos premiados.',
+            img: 'assets/prof-juliana-ramos.jpg'
+        },
+        'prof5-1985': {
+            nome: 'Sérgio Martins',
+            nasc: '03/05/1953',
+            sobre: 'Professor de Educação Física, referência em esportes escolares.',
+            extra: 'Treinador do time campeão regional.',
+            img: 'assets/prof-sergio-martins.jpg'
+        }
+    }
+    // Adicione outros anos conforme necessário
+};
+
+function setupProfessores(ano) {
+    const profBtns = document.querySelectorAll(`#sessao-${ano}-professores .prof-btn`);
+    const profName = document.getElementById(`prof-name-${ano}`);
+    const profNasc = document.getElementById(`prof-nasc-${ano}`);
+    const profSobre = document.getElementById(`prof-sobre-${ano}`);
+    const profExtra = document.getElementById(`prof-extra-${ano}`);
+    const profImg = document.getElementById(`prof-img-${ano}`);
+
+    profBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
+            profBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const profId = btn.getAttribute('data-prof');
+            const data = professoresData[ano][profId];
+            if (data) {
+                profName.textContent = data.nome;
+                profNasc.textContent = 'Nascimento: ' + data.nasc;
+                profSobre.textContent = data.sobre;
+                profExtra.textContent = data.extra;
+                profImg.src = data.img;
+                profImg.style.display = 'block';
+            }
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    // ...existing code...
+    setupProfessores('1974');
+    setupProfessores('1985');
+    // Adicione outros anos conforme necessário
+});

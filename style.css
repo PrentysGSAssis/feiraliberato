@@ -239,3 +239,15 @@ main {
 
 }
 
+.instrucoes {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    padding: 30px;
+    margin-bottom: 32px;
+}
+
+.instrucoes h3 {
+    color: #005fa3;
+}
+

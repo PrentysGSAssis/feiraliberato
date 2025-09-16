@@ -32,7 +32,6 @@ main {
     box-shadow: 0 4px 16px rgba(0,0,0,0.1);
     padding: 30px;
     width: 100%;
-    max-width: 700px;
 }
 
 .years-wrapper {
@@ -222,7 +221,7 @@ main { padding: 2rem; }
 
 #year-content.active {
     padding: 25px; /* Adiciona padding quando aberto */
-    max-height: 500px; /* Altura suficiente para o conteúdo */
+    
 }
 
 .box {

@@ -11,8 +11,8 @@
 </head>
 <body>
     <header>
-        <h1>Feira Técnica Liberato</h1>
-        <p>Conheça a história da nossa escola através de uma linha do tempo interativa!</p>
+        <h1 class="inicio">Feira Técnica Liberato</h1>
+        <p class="inicio">Conheça a história da nossa escola através de uma linha do tempo interativa!</p>
     </header>
     <main>
         <section id="timeline">
@@ -39,22 +39,18 @@
 
                     <section class="about-course">
                         <h3>Sobre o curso</h3>
-                        <p>O curso de Administração foi oferecido pelo Estado na sede do Município de Marliéria. Este curso desempenhou um papel significativo ao transformar a dinâmica da cidade, proporcionando aulas noturnas e oportunidades de qualificação para seus habitantes.</p>
-                        <p>O perfil dos alunos do curso técnico era bastante heterogêneo, abrangendo indivíduos de diversas faixas etárias, incluindo estudantes do ensino médio, trabalhadores e responsáveis por seus lares. O curso em si deve ser considerado um ponto de partida para a trajetória acadêmica e profissional, visto que a efetividade do curso está intrinsecamente ligada à participação dos alunos.</p>
-                        <p>Os alunos constituíam uma mescla de jovens e adultos; entre os jovens, havia tanto aqueles que ainda cursavam o ensino médio quanto os que já o haviam concluído há algum tempo, enquanto os adultos vislumbravam no curso uma oportunidade de aprimoramento curricular e aquisição de novos conhecimentos.</p>
-</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna eu tincidunt consectetur.</p>
                     </section>
                     
                     <section class="year-history">
                         <h3>História do ano</h3>
-                        <p> A criação do chat GPT possibilitou a facilidade nas pesquisas entre outros recursos.
-                        Em 2024, ano de conclusão do curso, também foi inaugurada a nova quadra da escola, que passou por uma reforma que se iniciou em 2023.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. História e contexto do ano.</p>
                     </section>
                     
                     <section class="director">
                         <div class="director-info">
                             <h3>Diretor(a)</h3>
-                            <p>Ariadne Paiva.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti.</p>
                         </div>
                         <img src="assets/imagens/placeholder-profile.png" alt="Foto do diretor" class="director-img">
                     </section>
@@ -62,12 +58,7 @@
                     <section class="professor">
                         <div class="professor-info">
                             <h3>Professor(a) Destaque</h3>
-                            <p>Nome : Iane de Castro Andrade</p>
-                            <p>Idade : 47</p>
-                            <p>Formação : Formada em Letras pela Puc Minas Betim e Pedagogia pela Favenni e Pós graduada em Leitura e Produção de Texto e em Psicopedagogia.</p>
-                            <p>Competências : Funções Públicas Municipais, Chefe de Gabinete e Professora.</p>
-                            <p>Curiosidade sobre o mesmo: Primeira experiência com adulto, trouxe uma bagagem bem grande para minha carreira como professora. Foi um Curso muito produtivo, com desempenho além do esperado.</p>
-                            
+                            <p>Informações sobre o professor homenageado do ano.</p>
                         </div>
                         <img src="assets/imagens/placeholder-profile.png" alt="Foto do professor" class="professor-img">
                     </section>
@@ -76,9 +67,9 @@
                         <h3>Alunos Destaque</h3>
                         <div class="student-list-container">
                             <ul class="student-list">
-                                <li><button type="button" class="student-btn" data-student="aluno1"> Vitória Leles</button></li>
-                                <li><button type="button" class="student-btn" data-student="aluno2"> Joana Rocha </button></li>
-                                <li><button type="button" class="student-btn" data-student="aluno3"> Cátia Olieira</button></li>
+                                <li><button type="button" class="student-btn" data-student="aluno1">Catia O. Silva</button></li>
+                                <li><button type="button" class="student-btn" data-student="aluno2">Vitória L. Quintão</button></li>
+                                <li><button type="button" class="student-btn" data-student="aluno3">Joana D. Silva</button></li>
                             </ul>
                             <div class="student-details">
                                 <div class="student-info">
@@ -86,7 +77,8 @@
                                     <p class="student-about"></p>
                                 </div>
 
-                                <a href="detalhes.html" target="_blank" rel="noopener noreferrer">
+                                <a class="student-anchor"
+                                href="detalhes.html" target="_blank" rel="noopener noreferrer">
                                     <img src="assets/imagens/alunos/place_holder.png" alt="Foto do aluno" class="student-img" style="display: none;">
                                 </a>
 
@@ -97,7 +89,7 @@
                     
                     <section class="projects-activities">
                         <h3>Projetos e Atividades</h3>
-                        <p>Haviam vários projetos como o feiraço que íamos com o intuito de aprender sobre as empresas, depois fazíamos projetos de planos de negócios colocando em prática o empreendedorismo entre outras aulas ,as atividades tinham o intuito de nos mostrar como gerar lucro com despesas mínimas ,como conversar em público e o mais importante como administrar.</p>
+                        <p>Detalhes sobre os principais projetos e atividades desenvolvidos no ano.</p>
                     </section>
 
                 </div>
@@ -113,23 +105,24 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // --- DADOS DOS ALUNOS ---
-            // Adicione ou modifique as informações dos alunos aqui para cada ano.
-            // A chave (ex: 'aluno1') deve ser a mesma do atributo `data-student` no HTML.
             const studentData = {
                 'aluno1': {
-                    name: 'Nome do Aluno 1',
+                    name: 'Catia',
                     about: 'Citacao do aluno',
-                    image: 'assets/imagens/alunos/Screenshot_5.png' // Caminho para a imagem do aluno 1
+                    image: 'assets/imagens/alunos/catia.jfif',
+                    anchor: 'administracao/catia.html' // Nome do arquivo do aluno
                 },
                 'aluno2': {
-                    name: 'Nome do Aluno 2',
+                    name: 'Vitória',
                     about: 'Citacao do aluno 2',
-                    image: 'assets/imagens/alunos/Screenshot_6.png' // Caminho para a imagem do aluno 2
+                    image: 'assets/imagens/alunos/Screenshot_6.jfif',
+                    anchor: 'administracao/vitoria.html'
                 },
                 'aluno3': {
-                    name: 'Nome do Aluno 3',
+                    name: 'Joana',
                     about: 'Citacao do aluno 3',
-                    image: 'assets/imagens/alunos/Screenshot_7.png' // Caminho para a imagem do aluno 3
+                    image: 'assets/imagens/alunos/joana.jfif',
+                    anchor: 'administracao/joana.html'
                 }
             };
 
@@ -138,8 +131,9 @@
             const studentNameElement = document.querySelector('.student-name');
             const studentAboutElement = document.querySelector('.student-about');
             const studentImageElement = document.querySelector('.student-img');
+            const studentAnchorElement = document.querySelector('.student-anchor');
 
-            if (studentButtons.length > 0 && studentNameElement && studentAboutElement && studentImageElement) {
+            if (studentButtons.length > 0 && studentNameElement && studentAboutElement && studentImageElement && studentAnchorElement) {
                 studentButtons.forEach(button => {
                     button.addEventListener('click', () => {
                         studentButtons.forEach(btn => btn.classList.remove('active'));
@@ -154,10 +148,12 @@
                             studentImageElement.src = data.image;
                             studentImageElement.alt = `Foto de ${data.name}`;
                             studentImageElement.style.display = 'block';
+                            studentAnchorElement.href = data.anchor; // Atualiza o link
                         } else {
                             studentNameElement.textContent = 'Informações não encontradas';
                             studentAboutElement.textContent = '';
                             studentImageElement.style.display = 'none';
+                            studentAnchorElement.href = 'detalhes.html';
                         }
                     });
                 });
@@ -166,4 +162,3 @@
     </script>
 </body>
 </html>
-

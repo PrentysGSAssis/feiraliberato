@@ -9,8 +9,9 @@
 </head>
 <body>
     <header>
-        <h1>Feira Técnica Liberato</h1>
-        <p>Conheça a história da nossa escola através de uma linha do tempo interativa!</p>
+    <header>
+        <h1 class="inicio">Feira Técnica Liberato</h1>
+        <p class="inicio">Conheça a história da nossa escola através de uma linha do tempo interativa!</p>
     </header>
     <main>
         <section id="timeline">
@@ -108,17 +109,20 @@
                 'aluno1': {
                     name: 'Nome do Aluno 1',
                     about: 'Citacao do aluno',
-                    image: 'assets/imagens/alunos/Screenshot_5.png' // Caminho para a imagem do aluno 1
+                    image: 'assets/imagens/alunos/Screenshot_5.png',
+                    anchor: 'student-aluno1.html'
                 },
                 'aluno2': {
                     name: 'Nome do Aluno 2',
                     about: 'Citacao do aluno 2',
-                    image: 'assets/imagens/alunos/Screenshot_6.png' // Caminho para a imagem do aluno 2
+                    image: 'assets/imagens/alunos/Screenshot_6.png',
+                    anchor: 'student-aluno2.html'
                 },
                 'aluno3': {
                     name: 'Nome do Aluno 3',
                     about: 'Citacao do aluno 3',
-                    image: 'assets/imagens/alunos/Screenshot_7.png' // Caminho para a imagem do aluno 3
+                    image: 'assets/imagens/alunos/Screenshot_7.png',
+                    anchor: 'student-aluno3.html'
                 }
             };
 
@@ -127,8 +131,9 @@
             const studentNameElement = document.querySelector('.student-name');
             const studentAboutElement = document.querySelector('.student-about');
             const studentImageElement = document.querySelector('.student-img');
+            const studentAnchorElement = document.querySelector('.student-anchor');
 
-            if (studentButtons.length > 0 && studentNameElement && studentAboutElement && studentImageElement) {
+            if (studentButtons.length > 0 && studentNameElement && studentAboutElement && studentImageElement && studentAnchorElement) {
                 studentButtons.forEach(button => {
                     button.addEventListener('click', () => {
                         studentButtons.forEach(btn => btn.classList.remove('active'));
@@ -143,10 +148,12 @@
                             studentImageElement.src = data.image;
                             studentImageElement.alt = `Foto de ${data.name}`;
                             studentImageElement.style.display = 'block';
+                            studentAnchorElement.href = data.anchor;
                         } else {
                             studentNameElement.textContent = 'Informações não encontradas';
                             studentAboutElement.textContent = '';
                             studentImageElement.style.display = 'none';
+                            studentAnchorElement.href = 'detalhes.html';
                         }
                     });
                 });

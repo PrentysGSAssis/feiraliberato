@@ -5,10 +5,6 @@
     padding: 0;
 }
 
-.inicio {
-    text-align: center;
-}
-
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
     background-color: #f4f6fa;
@@ -23,8 +19,6 @@ h1, h2, h3, h4 {
 }
 
 p {
-    text-align: justify;
-    text-justify: inter-word;
     line-height: 1.5;
 }
 
@@ -135,8 +129,8 @@ main {
     object-fit: cover;
     left: 0;
     top: 0;
-    z-index: 0;
-    border: #004a80 5px solid;
+    z-index: 1;
+    opacity: 0.6;
 }
 
 .banner-title {

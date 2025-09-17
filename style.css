@@ -18,6 +18,10 @@ h1, h2, h3, h4 {
     font-weight: 600;
 }
 
+p {
+    line-height: 1.5;
+}
+
 /* === CABEÇALHO E RODAPÉ === */
 header {
     background-color: #005fa3;

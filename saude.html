@@ -78,9 +78,9 @@
                         <h3>Alunos Destaque</h3>
                         <div class="student-list-container">
                             <ul class="student-list">
-                                <li><button type="button" class="student-btn" data-student="aluno1">Nome do Aluno 1</button></li>
-                                <li><button type="button" class="student-btn" data-student="aluno2">Nome do Aluno 2</button></li>
-                                <li><button type="button" class="student-btn" data-student="aluno3">Nome do Aluno 3</button></li>
+                                <li><button type="button" class="student-btn" data-student="aluno1">Catia O. Silva</button></li>
+                                <li><button type="button" class="student-btn" data-student="aluno2">Vitória L. Quintão</button></li>
+                                <li><button type="button" class="student-btn" data-student="aluno3">Joana D. Silva</button></li>
                             </ul>
                             <div class="student-details">
                                 <div class="student-info">
@@ -88,7 +88,8 @@
                                     <p class="student-about"></p>
                                 </div>
 
-                                <a href="detalhes.html" target="_blank" rel="noopener noreferrer">
+                                <a class="student-anchor"
+                                href="detalhes.html" target="_blank" rel="noopener noreferrer">
                                     <img src="assets/imagens/alunos/place_holder.png" alt="Foto do aluno" class="student-img" style="display: none;">
                                 </a>
 
@@ -115,26 +116,24 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // --- DADOS DOS ALUNOS ---
-            // Adicione ou modifique as informações dos alunos aqui para cada ano.
-            // A chave (ex: 'aluno1') deve ser a mesma do atributo `data-student` no HTML.
             const studentData = {
                 'aluno1': {
-                    name: 'Nome do Aluno 1',
+                    name: 'Catia',
                     about: 'Citacao do aluno',
-                    image: 'assets/imagens/alunos/Screenshot_5.png',
-                    anchor: 'student-aluno1.html'
+                    image: 'assets/imagens/alunos/catia.jfif',
+                    anchor: 'administracao/catia.html' // Nome do arquivo do aluno
                 },
                 'aluno2': {
-                    name: 'Nome do Aluno 2',
+                    name: 'Vitória',
                     about: 'Citacao do aluno 2',
-                    image: 'assets/imagens/alunos/Screenshot_6.png',
-                    anchor: 'student-aluno2.html'
+                    image: 'assets/imagens/alunos/Screenshot_6.jfif',
+                    anchor: 'administracao/vitoria.html'
                 },
                 'aluno3': {
-                    name: 'Nome do Aluno 3',
+                    name: 'Joana',
                     about: 'Citacao do aluno 3',
-                    image: 'assets/imagens/alunos/Screenshot_7.png',
-                    anchor: 'student-aluno3.html'
+                    image: 'assets/imagens/alunos/joana.jfif',
+                    anchor: 'administracao/joana.html'
                 }
             };
 
@@ -160,7 +159,7 @@
                             studentImageElement.src = data.image;
                             studentImageElement.alt = `Foto de ${data.name}`;
                             studentImageElement.style.display = 'block';
-                            studentAnchorElement.href = data.anchor;
+                            studentAnchorElement.href = data.anchor; // Atualiza o link
                         } else {
                             studentNameElement.textContent = 'Informações não encontradas';
                             studentAboutElement.textContent = '';

@@ -1,10 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Documentação</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 260px;
+            height: 100vh;
+            background: #222;
+            color: #fff;
+            padding: 1em 0 1em 0;
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0 0.5em;
+            display: block;
+        }
+        nav ul li {
+            margin: 0.5em 0;
+        }
+        nav ul li > a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            display: block;
+            padding: 0.3em 0.5em;
+        }
+        nav ul li > a:hover {
+            text-decoration: underline;
+            background: #333;
+        }
+        nav ul ul {
+            list-style: none;
+            margin: 0.2em 0 0.2em 1em;
+            padding: 0;
+            display: block;
+        }
+        nav ul ul li {
+            margin: 0.2em 0;
+        }
+        nav ul ul li a {
+            color: #ccc;
+            font-weight: normal;
+            font-size: 0.97em;
+            padding: 0.2em 0.5em;
+        }
+        nav ul ul li a:hover {
+            color: #fff;
+            background: #444;
+        }
+        .container {
+            max-width: 800px;
+            margin: 2em auto 2em 280px;
+            padding: 0 1em;
+        }
+        section {
+            margin-bottom: 2em;
+        }
+        h2 {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.3em;
+        }
+        .profile-pic {
+            width: 109px;
+            height: 109px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-left: 1em;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+    </style>
+
 </head>
 <body>
     <nav>
@@ -73,7 +150,7 @@
                 <h2>Diretor</h2>
                 <div style="display:flex;align-items:center;justify-content:space-between;">
                     <p style="margin:0;">Ariadne</p>
-                    <img src="profile-placeholder.png" alt="Foto do Diretor" class="profile-pic">
+                    <img src="assets/imagens/diretores/ariadne.jfif" alt="Foto do Diretor" class="profile-pic">
                 </div>
             </article>
             <article id="informatica-professor">
@@ -115,7 +192,7 @@
                 <h2>Diretor</h2>
                 <div style="display:flex;align-items:center;justify-content:space-between;">
                     <p style="margin:0;">Ariadne Paiva</p>
-                    <img src="profile-placeholder.png" alt="Foto do Diretor" class="profile-pic">
+                    <img src="assets/imagens/diretores/ariadne.jfif" alt="Foto do Diretor" class="profile-pic">
                 </div>
             </article>
             <article id="administracao-professor">
@@ -225,29 +302,54 @@
                 </div>
                 <h3><strong>Rômulo Soares Rodrigues Vieira</strong></h3>
                 <div>
-                    <strong>Sobre o curso:</strong>
-                    <p>
-                        O curso que atuei como professor foi de técnico de administração, o curso em si deve ser considerado como um ponto de partida para a vida acadêmica e profissional pois o que faz o curso ser efetivo ou não são os alunos que participavam dele.
-                    </p>
-                    <strong>Alunos:</strong>
-                    <p>
-                        Os alunos era um misto de jovens e adultos, entre os jovens tinha aqueles que ainda estavam cursando o ensino médio e os que já haviam terminado a algum tempo e os adultos que viam no curso uma oportunidade melhoria no currículo e no conhecimento.
-                    </p>
-                    <strong>Professor:</strong>
-                    <p>
-                        <strong>Matéria/aulas:</strong> As matérias que eu atuei foram variadas, matemática, introdução ao direito, introdução administração entre outros
-                    </p>
-                    <strong>Conclusão:</strong>
-                    <p>
-                        A experiencia de dar aula nesse curso pra mim foi de muito valor, tive a oportunidade de conhecer melhor alguns alunos e fazer amizade e entender a realidade que cada um está inserido.
-                    </p>
-                    <strong>Sobre você:</strong>
-                    <p>não sei o que dizer sobre mim além do que vcs já conhecem</p>
-                    <strong>Nome:</strong> Rômulo Soares Rodrigues Vieira<br>
-                    <strong>Idade:</strong> 32<br>
-                    <strong>Formação:</strong> Ciências Contábeis<br>
-                    <strong>Competências:</strong> 10 anos de experiencia na área da contabilidade e administração pública e experiencia prévia na área comercial<br>
-                    <strong>Curiosidade sobre o mesmo:</strong> Vim morar em Marliéria durante a pandemia no inicio de 2021 e por enquanto não pretendo ir embora.
+                    <h4>Sobre o Curso Técnico em Administração</h4>
+                    <p>O curso técnico em Administração, no qual Rômulo Soares Rodrigues Vieira atuou como professor, representa um marco inicial para a trajetória acadêmica e profissional dos alunos. Mais do que um simples programa educacional, o curso se destacou pelo engajamento e dedicação dos estudantes, que foram fundamentais para seu sucesso. Ele proporcionou uma base sólida em administração, capacitando os participantes para novos desafios no mercado de trabalho e incentivando o desenvolvimento de habilidades práticas e teóricas essenciais para a carreira profissional.</p>
+                    <h4>Perfil dos Alunos</h4>
+                    <p>A turma do curso era composta por um grupo diverso, unindo jovens e adultos com diferentes objetivos e trajetórias. Entre os mais jovens, havia aqueles que ainda cursavam o ensino médio, buscando complementar sua formação, e outros que já haviam concluído os estudos há algum tempo e viam no curso uma oportunidade de crescimento. Já os adultos, em sua maioria, enxergavam a formação como uma chance de enriquecer o currículo e adquirir conhecimentos práticos que os qualificassem para melhores oportunidades profissionais. Essa diversidade criou um ambiente dinâmico, com trocas ricas de experiências e perspectivas.</p>
+                    <h4>O Professor: Rômulo Soares Rodrigues Vieira</h4>
+                    <p>Rômulo Soares Rodrigues Vieira, de 32 anos, trouxe sua expertise e paixão pelo ensino para o curso técnico em Administração. Graduado em Ciências Contábeis, ele acumula 10 anos de experiência nas áreas de contabilidade e administração pública, além de vivência prévia no setor comercial. Essa bagagem profissional permitiu que ele conectasse os conteúdos teóricos às demandas práticas do mercado, oferecendo aos alunos uma visão ampla e aplicável da administração.</p>
+                    <h4>Matérias e Estrutura do Curso</h4>
+                    </p>As disciplinas ministradas por Rômulo abrangeram temas variados e fundamentais para a formação em administração, incluindo Matemática, Introdução ao Direito e Introdução à Administração, entre outras. A abordagem das aulas foi pensada para equilibrar teoria e prática, permitindo que os alunos desenvolvessem uma compreensão sólida dos conceitos e soubessem aplicá-los em situações reais, seja no ambiente empresarial ou na gestão pública.</p>
+                    <h4>Conclusão do Curso</h4>
+                    <p>Para Rômulo, a experiência de lecionar no curso técnico em Administração foi extremamente enriquecedora. Além de compartilhar conhecimento, ele teve a oportunidade de conhecer melhor seus alunos, criar laços de amizade e compreender as realidades e desafios enfrentados por cada um. Essa conexão com os estudantes tornou o processo de ensino ainda mais significativo, reforçando a importância da educação como ferramenta de transformação social.</p>
+                    <h4>Sobre Rômulo Soares Rodrigues Vieira</h4>
+                    <p>Com 32 anos, Rômulo é um profissional dedicado, com uma trajetória consolidada na área de contabilidade e administração pública. Sua experiência no setor comercial também agrega versatilidade ao seu perfil, permitindo-lhe atuar com competência em diferentes contextos. Desde que se mudou para Marliéria, no início de 2021, durante a pandemia, Rômulo encontrou na cidade um lar e uma comunidade acolhedora. Ele afirma que, por enquanto, não tem planos de deixar o município, onde tem se dedicado tanto ao serviço público quanto à educação.</p>
+                    <h4>Curiosidade</h4>
+                    </p>A mudança para Marliéria em 2021 marcou um novo capítulo na vida de Rômulo. Ele destaca que a experiência de se adaptar a uma nova cidade durante um período tão desafiador como a pandemia foi transformadora. Sua atuação como professor no curso técnico em Administração reforçou ainda mais sua conexão com a comunidade, solidificando seu compromisso em contribuir para o desenvolvimento local.</p>
+                </div>
+                <h3><strong>Juliano Pinto Martins</strong></h3>
+                <div>
+                   <strong>Sobre o Curso Técnico em Administração</strong>
+                   <p>O curso técnico em Administração foi um marco histórico para Marliéria, sendo o primeiro curso técnico oferecido pelo Estado na sede do município. Sua implementação trouxe uma nova dinâmica à cidade, proporcionando qualificação profissional acessível aos moradores. Com aulas ministradas no período noturno, o curso abriu portas para que pessoas com rotinas diversas pudessem investir em sua formação, contribuindo para o desenvolvimento socioeconômico da região. A iniciativa foi um divisor de águas, promovendo não apenas capacitação, mas também fortalecendo a autoestima e as perspectivas de futuro dos habitantes.</p>
+                   <strong>Perfil dos Alunos</strong>
+                   <p>O curso atraiu um grupo extremamente diversificado, refletindo a pluralidade da comunidade de Marliéria. Entre os alunos, havia jovens cursando o ensino médio, trabalhadores em busca de ascensão profissional e chefes de família que conciliavam responsabilidades domésticas com os estudos. Essa heterogeneidade enriqueceu as trocas em sala de aula, trazendo diferentes perspectivas e experiências que tornaram o aprendizado mais dinâmico e significativo.</p>
+                   <strong>O Professor: Juliano Pinto Martins</strong>
+                   <p>Juliano Pinto Martins, de 37 anos, foi o responsável por ministrar as aulas do curso. Servidor público municipal em Marliéria há 9 anos, ele atualmente atua no Setor de Licitações da prefeitura. Formado em Ciências Econômicas pela Universidade Federal dos Vales do Jequitinhonha e Mucuri (UFVJM), Juliano também possui pós-graduação em Gestão Financeira, o que o capacitou a trazer uma abordagem prática e atualizada às aulas. Sua experiência no setor público municipal complementou sua atuação como docente, permitindo que conectasse os conteúdos teóricos à realidade prática do mercado e da administração pública.</p>
+                   <strong></strong>Matérias e Estrutura do Curso</strong>
+                   <p>As disciplinas do curso técnico em Administração abrangeram áreas fundamentais como economia, contabilidade e ciências exatas, com conteúdos que variavam de acordo com os módulos. As aulas foram planejadas para oferecer uma formação sólida, capacitando os alunos para atuar em diferentes contextos profissionais, desde a gestão de negócios até processos administrativos em empresas ou órgãos públicos. A abordagem prática das matérias foi um diferencial, ajudando os estudantes a aplicarem o conhecimento diretamente em suas realidades.</p>
+                   <strong>Conclusão do Curso</strong>
+                   <p>O curso técnico em Administração foi concluído em meados de 2024, deixando um legado significativo para a comunidade. Muitos alunos conseguiram aplicar os conhecimentos adquiridos em suas carreiras, seja em novos empregos, promoções ou na abertura de pequenos negócios, contribuindo para o fortalecimento da economia local.</p>
+                   <strong>Sobre Juliano Pinto Martins</strong>
+                   <p>Além de sua atuação como servidor público e professor, Juliano destaca que o curso técnico em Administração marcou sua primeira experiência como docente integralmente dedicado a uma disciplina específica. Essa oportunidade foi desafiadora e gratificante, permitindo-lhe compartilhar seu conhecimento e aprender com a diversidade de experiências dos alunos. Aos 37 anos, ele se orgulha de ter contribuído para a formação de profissionais mais qualificados e para o desenvolvimento de Marliéria.</p>
+                   <strong>Curiosidade</strong>
+                   <p>Para Juliano, assumir o papel de professor no curso técnico foi uma experiência transformadora. Ele destaca que a interação com os alunos e a troca de conhecimentos foram aspectos que o marcaram profundamente, consolidando sua paixão por ensinar e por contribuir para o crescimento de sua comunidade.</p>
+                </div>
+                <h3><strong>Iane de Castro Andrade</strong></h3>
+                <div>
+                    <strong>Sobre o Curso Técnico em Administração</strong>
+                    <p>O curso técnico em Administração foi um marco para a cidade, sendo o primeiro oferecido pela Secretaria Estadual de Ensino na sede do município. Sua implementação abriu novas perspectivas para trabalhadores e estudantes do ensino médio, que encontraram nas aulas noturnas uma oportunidade acessível para se qualificarem profissionalmente. A iniciativa não apenas ampliou o acesso à educação técnica, mas também fortaleceu a comunidade, promovendo capacitação e incentivando o desenvolvimento pessoal e profissional dos moradores.</p>
+                    <strong>Perfil dos Alunos</strong>
+                    <p>A turma do curso era marcada por sua diversidade e engajamento. Composta por alunos de diferentes idades, desde jovens estudantes do ensino médio até adultos já inseridos no mercado de trabalho, a heterogeneidade do grupo exigiu dos professores grande habilidade e criatividade no planejamento das aulas. A participação ativa e o interesse dos alunos criaram um ambiente dinâmico e colaborativo, onde as trocas de experiências enriqueceram o aprendizado e tornaram as aulas ainda mais produtivas.</p>
+                    <strong>A Professora: Iane de Castro Andrade</strong>
+                    <p>Iane de Castro Andrade, de 47 anos, foi uma das docentes responsáveis por conduzir o curso. Sua primeira experiência lecionando para adultos foi desafiadora e extremamente gratificante, motivando-a a continuar atuando na educação técnica. Formada em Letras pela PUC Minas Betim e em Pedagogia pela Favenni, com pós-graduações em Leitura e Produção de Texto e em Psicopedagogia, Iane trouxe uma abordagem humanizada e prática às aulas. Sua trajetória como chefe de gabinete e professora no âmbito municipal complementou sua atuação, permitindo que conectasse os conteúdos às necessidades reais dos alunos.</p>
+                    <strong>Matérias e Estrutura do Curso</strong>
+                    <p>Iane ministrou disciplinas voltadas para as áreas de humanas, como Português e Empreendedorismo, entre outras. As aulas foram planejadas para estimular o pensamento crítico e a aplicação prática dos conhecimentos, incentivando os alunos a desenvolverem habilidades essenciais para a gestão e o mercado de trabalho. A abordagem dinâmica e adaptada à diversidade da turma foi um diferencial, garantindo que os conteúdos fossem acessíveis e relevantes para todos.</p>
+                    <strong>Conclusão do Curso</strong>
+                    <p>O curso técnico em Administração foi concluído em julho de 2024, deixando um legado significativo para os alunos e para a comunidade. Para Iane, a experiência de lecionar para adultos foi marcante, especialmente por conta do interesse genuíno da maioria dos estudantes em aprender. Diferentemente de sua experiência com a educação básica, o trabalho com o público adulto destacou-se pela motivação e dedicação dos alunos, o que tornou o curso uma experiência inesquecível e altamente produtiva.</p>
+                    <strong>Sobre Iane de Castro Andrade</strong>
+                    <p>Com 47 anos, Iane é uma profissional multifacetada, com sólida formação acadêmica e experiência em funções públicas municipais, incluindo o cargo de chefe de gabinete. Sua trajetória como professora abrange todos os níveis da educação básica, mas a atuação no curso técnico em Administração trouxe uma nova perspectiva à sua carreira. Sua paixão pela educação e sua habilidade em se conectar com os alunos reforçam seu compromisso em transformar vidas por meio do ensino.</p>
+                    <strong>Curiosidade</strong>
+                    <p>A experiência de lecionar para adultos no curso técnico em Administração foi um marco na carreira de Iane. Ela destaca que o curso superou suas expectativas, tanto pelo desempenho excepcional dos alunos quanto pelo aprendizado que ela mesma adquiriu ao longo do processo. A troca de experiências com a turma trouxe uma bagagem valiosa, consolidando sua paixão por ensinar e reforçando a importância de iniciativas educacionais que atendam às necessidades de diferentes públicos.</p>
                 </div>
             </article>
         </section>
@@ -267,7 +369,7 @@
                 <h2>Diretores</h2>
                 <div style="display:flex;align-items:center;justify-content:space-between;">
                     <p style="margin:0;">Ana Maria Araujo Quintão</p>
-                    <img src="profile-placeholder.png" alt="Foto da Diretora" class="profile-pic">
+                    <img src="assets/imagens/ana_maria.jpg" alt="Foto da Diretora" class="profile-pic">
                 </div>
             </article>
             <article id="magisterio-professores">
@@ -329,9 +431,8 @@
                 <div style="display:flex;align-items:center;justify-content:space-between;">
                     <div>
                         <p style="margin:0;">Diretora: Maria das Graças Borges Morais</p>
-                        <p style="margin:0;">Inspetora: Ruth Assis Drumond Borges</p>
                     </div>
-                    <img src="profile-placeholder.png" alt="Foto da Diretora" class="profile-pic">
+                    <img src="assets/imagens/diretores/borges.jpg" alt="Foto da Diretora" class="profile-pic">
                 </div>
             </article>
             <article id="saude-professor">

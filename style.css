@@ -254,3 +254,12 @@ main {
     color: #005fa3;
 }
 
+.interview-text h4 {
+    margin-top: 50px;
+    margin-bottom: 16px;
+}
+
+.interview-text h5 {
+    margin-top: 32px;
+    margin-bottom: 4px;
+}

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feira Técnica - Agradecimentos</title>
+    <link rel="shortcut icon" href="liberato_logo.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* === ESTILOS GERAIS E RESET === */
+        * {
+            box-sizing: border-box
+        }
+
+        /* Adiciona a rolagem suave */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* === CABEÇALHO E RODAPÉ (Mantidos para consistência) === */
+        header {
+            background-color: #005fa3;
+            color: #ffffff;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 24pt;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 8px;
+            opacity: 0.9;
+        }
+
+        footer {
+            background-color: #005fa3;
+            color: #ffffff;
+            text-align: center;
+            padding: 1.5rem 1rem;
+            margin-top: auto;
+        }
+
+        /* === LAYOUT PRINCIPAL === */
+        main {
+            flex: 1;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background-color: #ffffff;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        /* === SEÇÕES DE CONTEÚDO === */
+        section {
+            margin-bottom: 40px;
+        }
+
+        section:last-of-type {
+            margin-bottom: 0;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #005fa3;
+            margin-bottom: 12px;
+            text-align: center;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 12px;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #212529;
+            margin-bottom: 8px;
+        }
+
+        p {
+            margin-bottom: 16px;
+        }
+
+        /* === AGRADECIMENTOS ESPECIAIS (DESTAQUES) === */
+        .destaques-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap; 
+        }
+
+        .destaque-card {
+            background-color: #f8f9fa;
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            width: 100%;
+            max-width: 350px;
+            border: 1px solid #dee2e6;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .destaque-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .destaque-card img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 16px;
+            border: 4px solid #005fa3;
+            background-color: #e9ecef;
+        }
+        
+        .destaque-card p {
+            font-style: italic;
+            color: #495057;
+            font-size: 0.95rem;
+        }
+
+        /* === LISTA DE DESENVOLVEDORES (AJUSTE COM FLEXBOX) === */
+        .dev-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .dev-list li {
+            background-color: #e9ecef;
+            color: #343a40;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            transition: background-color 0.2s;
+            flex-basis: 250px;
+        }
+        
+        .dev-list li:hover {
+            background-color: #ced4da;
+        }
+
+        /* === BOTÃO FLUTUANTE (NOVO) === */
+        .botao-flutuante {
+            position: fixed;
+            width: 55px;
+            height: 55px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #005fa3;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.25);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+        }
+
+        .botao-flutuante:hover {
+            background-color: #004a80;
+            transform: scale(1.1);
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Adicionado um ID aqui para o link do botão funcionar -->
+    <header id="inicio">
+        <h1>Feira Técnica Liberato</h1>
+        <p>Conheça a história da nossa escola através de uma linha do tempo interativa!</p>
+    </header>
+
+    <main>
+        <div class="container" style="min-height: calc(100vh - 250px); overflow-y: auto;">
+
+            <!-- SEÇÃO COM A LISTA DE TODOS OS DESENVOLVEDORES -->
+            <section class="equipe-desenvolvimento">
+                <h2>Equipe de Desenvolvimento</h2>
+                <p style="text-align: center;">Parabéns a todos os alunos que participaram e contribuíram para que este site se tornasse realidade. <br>
+                    Sem vocês, nada disso seria possível!</p>
+                
+                <div>
+                    <ul class="dev-list">
+                        <li>Bruno A. Dias</li>
+                        <li>Daiana F. Santos</li>
+                        <li>Grazielle M. B. Pinto</li>
+                        <li>Ingrid N. V. Leles</li>
+                        <li>Jonas T. M. Quintão</li>
+                        <li>Julio S. Freitas</li>
+                        <li>Náthaly V. Miranda</li>
+                        <li>Rafaela V. Ferreira</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="agradecimentos-especiais">
+                <h2>Agradecimentos Especiais</h2>
+                <p style="text-align: center;">Gostaria de deixar um agradecimento especial a estes alunos, cuja dedicação para a construção, revisão e aprimoramento dos códigos foram fundamentais para a realização deste projeto.</p>
+                
+                <div class="destaques-wrapper">
+                    <div class="destaque-card">
+                        <a href="edmilson/ed.html" target="_blank"><img src="edmilson/style/IMG/edzada.jpg" alt="Foto do Aluno 1"></a>
+                        <h3>Edmilson A. Castro Filho</h3>
+                        <p>"Vlw"</p>
+                    </div>
+
+                    <div class="destaque-card">
+                        <a href="amanda/amanda.html" target="_blank"><img src="amanda/amanda.png" alt="Foto do Aluno 2"></a>
+                        <h3>Amanda S. Brito</h3>
+                        <p>"Vlw"</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Escola Liberato. Feira Técnica.</p>
+    </footer>
+
+    <!-- BOTÃO FLUTUANTE (NOVO) -->
+    <!-- Ele leva para o #inicio, que é o ID que adicionei no header -->
+    <a href="index.html" class="botao-flutuante" title="Voltar ao Inicio">
+        <!-- Ícone de seta para cima em SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+    </a>
+</body>
+</html>
+

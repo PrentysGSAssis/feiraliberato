@@ -76,10 +76,10 @@ body {
 
 /* Centralizar main */
 main {
-    max-width: 750px;
+    max-width: 1000px;
     margin: 120px auto;
     background: rgb(255, 255, 255);
-    border-radius: 32px;
+    border-radius: 30px;
     box-shadow: 0 2px 16px rgba(0,0,0,0.08);
     position: relative;
     z-index: 3;
@@ -90,9 +90,9 @@ main {
 }
 
 main h1 {
-    font-size: 2.2rem;
+    font-size: 220px;
     font-weight: bold;
-    margin-bottom: 1.5rem;
+    margin-bottom: 150px;
     text-align: left;
     width: 100%;
 }
@@ -117,9 +117,24 @@ main ul {
 }
 
 main ul li {
-    margin-bottom: 10px;
+    margin-bottom: 11px;
 }
 
 p {
-    line-height: 100px;
+    line-height: 25px;
+}
+
+
+main.segundo {
+    max-width: 1000px;
+    margin: 120px auto;
+    background: #cec18e(255, 255, 255);
+    border-radius: 30px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+    position: relative;
+    z-index: 3;
+    padding: 48px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }

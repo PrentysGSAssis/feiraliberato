@@ -1,14 +1,14 @@
 header {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #ffde59;
     color: rgb(0, 0, 0);
     padding: 50px;
     text-align: center;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    z-index: 10;
 }
 
 .profile-pic {
@@ -42,9 +42,7 @@ header {
 }
 
 body {
-    background: url('flor.png') repeat-y left, url('flor.png') repeat-y right, #fff3c2;
-    background-size: 200px auto, 200px auto;
-    background-position: left top, right top;
+    background: #fff3c2;
     min-height: 200px;
     position: relative;
 }
@@ -53,13 +51,14 @@ body {
 .pillar {
     position: fixed;
     top: 0;
-    width: 120px;
+    width: 200px;
     height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
     z-index: 1;
     pointer-events: none;
+    background: none;
 }
 .pillar-left {
     left: 0;
@@ -69,16 +68,18 @@ body {
 }
 .pillar img {
     width: 200px;
-    height: auto;
+    height: 100vh;
+    object-fit: cover;
     opacity: 0.85;
+    border-radius: 0 0 32px 32px;
 }
 
 /* Centralizar main */
 main {
-    max-width: 750px;
+    max-width: 1000px;
     margin: 120px auto;
-    background: rgba(255,255,255,0.95);
-    border-radius: 32px;
+    background: rgb(255, 255, 255);
+    border-radius: 30px;
     box-shadow: 0 2px 16px rgba(0,0,0,0.08);
     position: relative;
     z-index: 3;
@@ -89,9 +90,9 @@ main {
 }
 
 main h1 {
-    font-size: 2.2rem;
+    font-size: 220px;
     font-weight: bold;
-    margin-bottom: 1.5rem;
+    margin-bottom: 150px;
     text-align: left;
     width: 100%;
 }
@@ -116,5 +117,24 @@ main ul {
 }
 
 main ul li {
-    margin-bottom: 10px;
+    margin-bottom: 11px;
+}
+
+p {
+    line-height: 25px;
+}
+
+
+main.segundo {
+    max-width: 1000px;
+    margin: 120px auto;
+    background: #cec18e(255, 255, 255);
+    border-radius: 30px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+    position: relative;
+    z-index: 3;
+    padding: 48px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
